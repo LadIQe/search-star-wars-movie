@@ -1,5 +1,6 @@
 import { ActionTypeEnum, AllActions } from '../actions/ActionTypes'
 import {
+  actionClearMovies,
   actionFetchMovieDetailFailed,
   actionFetchMovieDetailSuccess,
   actionFetchMoviesFailed,
@@ -13,9 +14,13 @@ import { ResponseTypeMovies } from '../../types/API/ResponseTypes'
 
 export function* sagaFetchMovies({ payload }: AllActions.FetchMovies) {
   try {
-    const response: AxiosResponse<ResponseTypeMovies.GetMovies> = yield call(getMovies, payload.search, payload.page)
+    if (payload.search) {
+      const response: AxiosResponse<ResponseTypeMovies.GetMovies> = yield call(getMovies, payload.search, payload.page)
 
-    yield put(actionFetchMoviesSuccess(payload.search, response.data.Search, Number(response.data.totalResults), payload.page))
+      yield put(actionFetchMoviesSuccess(payload.search, response.data.Search, Number(response.data.totalResults), payload.page))
+    } else {
+      yield put(actionClearMovies())
+    }
   } catch {
     yield put(actionFetchMoviesFailed())
   }

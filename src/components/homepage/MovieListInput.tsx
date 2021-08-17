@@ -16,7 +16,7 @@ type Props = StateProps & DispatchProps
 const MovieListInput: FC<Props> = ({ fetchMovies, page }) => {
   const handleOnSearch = (searchString: string) => fetchMovies(searchString, page)
 
-  return <Input.Search placeholder="Movie name" size="large" onSearch={(value) => handleOnSearch(value)} />
+  return <Input.Search id="search-input" placeholder="Movie name" size="large" onSearch={(value) => handleOnSearch(value)} />
 }
 
 const mapStateToProps = (state: ReduxStateTypes.DefaultState): StateProps => ({

@@ -51,6 +51,7 @@ const movieReducer = (state = initialState, action: Actions): ReduxStateTypes.Mo
     case ActionTypeEnum.CLEAR_MOVIES:
       return {
         ...state,
+        isFetching: false,
         movies: [],
         movieDetail: null,
         page: 1,
