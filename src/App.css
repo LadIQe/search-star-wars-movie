@@ -1,38 +1,58 @@
+h1 {
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+
 .App {
-  text-align: center;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 50px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.homepage .input-wrapper {
+  max-width: 500px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homepage .list-wrapper {
+  margin-top: 50px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.homepage .pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.detail-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.detail-wrapper h1 {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: break-spaces;
+}
+
+.detail-wrapper h1 span {
+  margin-left: 30px;
+}
+
+.info-renderer-row {
+  padding-bottom: 2.5px;
+}
+
+.navigation {
+  margin-bottom: 20px;
 }
